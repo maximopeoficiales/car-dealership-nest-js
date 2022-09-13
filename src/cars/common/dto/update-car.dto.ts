@@ -1,6 +1,10 @@
-import { Car } from "../interfaces/car.interface";
+import { IsString } from 'class-validator';
+import { Car } from '../interfaces/car.interface';
 
-export interface UpdateCarDto extends Omit<Car, 'id'> {
+export class UpdateCarDto implements Omit<Car, 'id'> {
+  @IsString()
+  readonly name: string;
 
-}  
-
+  @IsString()
+  readonly brand: string;
+}
