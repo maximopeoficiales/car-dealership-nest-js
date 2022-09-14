@@ -6,23 +6,15 @@ import { UpdateCarDto } from './dto/update-car.dto';
 @Injectable()
 export class CarsService {
   private cars: Car[] = [
-    {
-      id: uuid(),
-      name: 'Ter Stegen',
-      brand: 'Toyota',
-    },
-    {
-      id: uuid(),
-      name: 'Otro Stegen',
-      brand: 'Stegen',
-    },
-    {
-      id: uuid(),
-      name: 'Susuki',
-      brand: 'Susuki St',
-    },
+    // {
+    //   id: uuid(),
+    //   name: 'Ter Stegen',
+    //   brand: 'Toyota',
+    // }
   ];
-
+  fillCars(cars: Car[]) {
+    this.cars = cars;
+  }
   findIndexById(id: string) {
     const carIndex = this.cars.findIndex((car) => car.id === id);
     const findCard = this.cars[carIndex];

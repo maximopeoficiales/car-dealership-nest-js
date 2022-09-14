@@ -8,11 +8,13 @@ import {
   Delete,
   ParseUUIDPipe,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { BrandsService } from './brands.service';
 import { CreateBrandDto } from './dto/create-brand.dto';
 import { UpdateBrandDto } from './dto/update-brand.dto';
 
 @Controller('brands')
+@ApiTags("brands")
 export class BrandsController {
   constructor(private readonly brandsService: BrandsService) {}
 

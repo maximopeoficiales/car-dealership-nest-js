@@ -6,7 +6,7 @@ export class UpdateCarDto extends PartialType(CreateCarDto) {
   @IsString()
   @IsOptional()
   @MinLength(5)
-  readonly name?: string;
+  readonly model?: string;
 
   @IsString()
   @MinLength(5)

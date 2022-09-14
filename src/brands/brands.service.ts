@@ -7,18 +7,15 @@ import { Brand } from './entities/brand.entity';
 @Injectable()
 export class BrandsService {
   private brands: Brand[] = [
-    {
-      id: uuid(),
-      name: 'Brand 1',
-      createdAt: new Date().getTime(),
-    },
-    {
-      id: uuid(),
-      name: 'Brand 2',
-      createdAt: new Date().getTime(),
-    },
+    // {
+    //   id: uuid(),
+    //   name: 'Brand 1',
+    //   createdAt: new Date().getTime(),
+    // },
   ];
-
+  fillBrands(brands: Brand[]) {
+    this.brands = brands;
+  }
   findIndexById(id: string) {
     const index = this.brands.findIndex((car) => car.id === id);
     const findBrand = this.brands[index];

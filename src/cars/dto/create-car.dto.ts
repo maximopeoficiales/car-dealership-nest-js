@@ -3,7 +3,7 @@ import { Car } from '../interfaces/car.interface';
 
 export class CreateCarDto implements Omit<Car, 'id'> {
   @IsString()
-  readonly name: string;
+  readonly model: string;
 
   @IsString()
   readonly brand: string;
