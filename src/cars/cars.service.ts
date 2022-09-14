@@ -29,6 +29,7 @@ export class CarsService {
     if (!findCard) throw new NotFoundException(`Car with id ${id} not found`);
     return { findCard, carIndex };
   }
+
   findAll() {
     return this.cars;
   }
@@ -37,20 +38,23 @@ export class CarsService {
     const { findCard } = this.findIndexById(id);
     return findCard;
   }
-  updateById(id: string, data: UpdateCarDto) {
+
+  updateById(id: string, updateCarDto: UpdateCarDto) {
     const { findCard, carIndex } = this.findIndexById(id);
-    const updateCar = { ...findCard, ...data };
+    const updateCar: Car = { ...findCard, ...updateCarDto, id: findCard.id };
     this.cars[carIndex] = updateCar;
     return updateCar;
   }
+
   deleteById(id: string) {
     const { findCard } = this.findIndexById(id);
     this.cars = this.cars.filter((e) => e.id !== findCard.id);
-    return true;
+    
   }
-  create(newCar: CreateCarDto) {
+
+  create(createCarDto: CreateCarDto) {
     const newId = uuid();
-    const car: Car = { ...newCar, id: newId };
+    const car: Car = { ...createCarDto, id: newId };
     this.cars.push(car);
     return car;
   }

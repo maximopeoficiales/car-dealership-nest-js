@@ -16,7 +16,7 @@ import { UpdateCarDto } from './common/dto/update-car.dto';
 @Controller('cars')
 @ApiTags('cars')
 export class CarsController {
-  constructor(private readonly carService: CarsService) {}
+  constructor(private readonly carService: CarsService) { }
   @Get()
   getAllCars() {
     return this.carService.findAll();
@@ -43,6 +43,6 @@ export class CarsController {
 
   @Delete(':id')
   deleteCar(@Param('id', ParseUUIDPipe) id: string) {
-    return this.carService.deleteById(id);
+    this.carService.deleteById(id);
   }
 }
