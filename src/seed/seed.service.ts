@@ -11,8 +11,8 @@ export class SeedService {
     private readonly carService: CarsService
   ) { }
   populateDB() {
-    this.brandService.fillBrands(BRANDS_SEED);
-    this.carService.fillCars(CARS_SEED);
+    this.brandService.fillBrandsWithSeedData(BRANDS_SEED);
+    this.carService.fillCarsWithSeedData(CARS_SEED);
     return `Seed Generated`;
   }
 }

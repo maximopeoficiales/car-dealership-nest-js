@@ -12,7 +12,7 @@ export class CarsService {
     //   brand: 'Toyota',
     // }
   ];
-  fillCars(cars: Car[]) {
+  fillCarsWithSeedData(cars: Car[]) {
     this.cars = cars;
   }
   findIndexById(id: string) {

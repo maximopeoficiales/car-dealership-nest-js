@@ -13,7 +13,7 @@ export class BrandsService {
     //   createdAt: new Date().getTime(),
     // },
   ];
-  fillBrands(brands: Brand[]) {
+  fillBrandsWithSeedData(brands: Brand[]) {
     this.brands = brands;
   }
   findIndexById(id: string) {
