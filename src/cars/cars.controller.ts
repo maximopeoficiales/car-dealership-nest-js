@@ -10,13 +10,13 @@ import {
 } from '@nestjs/common';
 import { CarsService } from './cars.service';
 import { ApiTags } from '@nestjs/swagger';
-import { CreateCarDto } from './common/dto/create-car.dto';
-import { UpdateCarDto } from './common/dto/update-car.dto';
+import { CreateCarDto } from './dto/create-car.dto';
+import { UpdateCarDto } from './dto/update-car.dto';
 
 @Controller('cars')
 @ApiTags('cars')
 export class CarsController {
-  constructor(private readonly carService: CarsService) { }
+  constructor(private readonly carService: CarsService) {}
   @Get()
   getAllCars() {
     return this.carService.findAll();
@@ -43,6 +43,6 @@ export class CarsController {
 
   @Delete(':id')
   deleteCar(@Param('id', ParseUUIDPipe) id: string) {
-    this.carService.deleteById(id);
+    return this.carService.deleteById(id);
   }
 }
