@@ -1,4 +1,4 @@
-import { Controller,Post } from '@nestjs/common';
+import { Controller, Post } from '@nestjs/common';
 import { SeedService } from './seed.service';
 
 @Controller('seed')
@@ -9,5 +9,4 @@ export class SeedController {
   runSeed() {
     return this.seedService.populateDB();
   }
-
 }

@@ -1,15 +1,15 @@
-import { Car } from "src/cars/interfaces/car.interface";
+import { Car } from 'src/cars/interfaces/car.interface';
 import { v4 as uuid } from 'uuid';
 
 export const CARS_SEED: Car[] = [
-    {
-        id: uuid(),
-        model: 'Ter Stegen',
-        brand: 'Toyota',
-    },
-    {
-        id: uuid(),
-        model: 'Sivic',
-        brand: 'Honda',
-    }
+  {
+    id: uuid(),
+    model: 'Ter Stegen',
+    brand: 'Toyota',
+  },
+  {
+    id: uuid(),
+    model: 'Sivic',
+    brand: 'Honda',
+  },
 ];

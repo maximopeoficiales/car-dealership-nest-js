@@ -8,8 +8,8 @@ import { CARS_SEED } from './data/cars.seed';
 export class SeedService {
   constructor(
     private readonly brandService: BrandsService,
-    private readonly carService: CarsService
-  ) { }
+    private readonly carService: CarsService,
+  ) {}
   populateDB() {
     this.brandService.fillBrandsWithSeedData(BRANDS_SEED);
     this.carService.fillCarsWithSeedData(CARS_SEED);

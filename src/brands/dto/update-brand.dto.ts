@@ -6,5 +6,4 @@ export class UpdateBrandDto extends PartialType(CreateBrandDto) {
   @IsString()
   @MinLength(1)
   readonly name: string;
-
 }

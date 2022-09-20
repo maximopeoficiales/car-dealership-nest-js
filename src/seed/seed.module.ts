@@ -7,6 +7,6 @@ import { CarsModule } from 'src/cars/cars.module';
 @Module({
   controllers: [SeedController],
   providers: [SeedService],
-  imports: [CarsModule, BrandsModule]
+  imports: [CarsModule, BrandsModule],
 })
-export class SeedModule { }
+export class SeedModule {}
